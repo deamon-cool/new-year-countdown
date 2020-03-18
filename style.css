@@ -48,6 +48,9 @@ h1 {
     position: absolute;
     bottom: 20px;
     left: 50%;
+    transform: translateX(-50%);
+}
+
 .countdown {
     display: flex;
     transform: scale(2);
