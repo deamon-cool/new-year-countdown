@@ -13,9 +13,9 @@ function updateCountDown() {
     const diff = newYearTime - currentTime;
 
     const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-    const h = Math.floor(diff / 1000 / 60 / 60);
-    const m = Math.floor(diff / 1000 / 60);
-    const s = Math.floor(diff / 1000);
+    const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+    const m = Math.floor(diff / 1000 / 60) % 60;
+    const s = Math.floor(diff / 1000) % 60;
     console.log(seconds);
 }
 
