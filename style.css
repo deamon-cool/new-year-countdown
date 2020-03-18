@@ -43,6 +43,8 @@ h1 {
 
 .year {
     font-size: 200px;
+    z-index: -1;
+    opacity: 0.2;
 .countdown {
     display: flex;
     transform: scale(2);
