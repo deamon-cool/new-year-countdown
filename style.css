@@ -53,3 +53,7 @@ h1 {
     justify-content: center;
     margin: 15px;
 }
+
+.time h2 {
+    margin: 0 0 5px;
+}
