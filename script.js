@@ -4,6 +4,7 @@ const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 const countdown = document.getElementById('countdown');
 const year = document.getElementById('year');
+const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 
@@ -12,6 +13,7 @@ const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
 // set Year in backstage
 year.innerText = currentYear + 1;
 
+// Updated count down time
 function updateCountDown() {
     const currentTime = new Date();
     const diff = newYearTime - currentTime;
@@ -21,10 +23,17 @@ function updateCountDown() {
     const m = Math.floor(diff / 1000 / 60) % 60;
     const s = Math.floor(diff / 1000) % 60;
 
+    // add values to DOM
     days.innerHTML = d;
     hours.innerHTML = h < 10 ? '0' + h : h;
     minutes.innerHTML = m < 10 ? '0' + m : m;
     seconds.innerHTML = s < 10 ? '0' + s : s;
 }
 
+// Show spinner before count down
+setTimeout(() => {
+    loading.remove();
+}, 1000);
+
+// Run every second
 setInterval(updateCountDown, 1000);
